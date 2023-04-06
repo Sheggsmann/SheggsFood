@@ -11,18 +11,23 @@ type BannerProps = {
   text: string;
   btnText: string;
   image: any;
-  lightBg?: boolean;
+  textColor?: string;
   onPress: () => void;
 };
 
-export default function Banner({ text, btnText, image, lightBg, onPress }: BannerProps) {
+export default function Banner({ text, btnText, image, textColor, onPress }: BannerProps) {
   return (
     <View transparent style={styles.container}>
       <Image source={image} style={styles.img} />
 
       <View transparent style={{ flex: 0.65 }}></View>
       <View transparent style={{ flex: 0.6 }}>
-        <FigText lightColor="#fff" darkColor="#fff" weight="medium" style={styles.text}>
+        <FigText
+          lightColor={textColor || "#fff"}
+          darkColor={textColor || "#fff"}
+          weight="medium"
+          style={styles.text}
+        >
           {text}
         </FigText>
         <Button

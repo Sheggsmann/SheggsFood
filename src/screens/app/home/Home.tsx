@@ -32,6 +32,7 @@ const bannerItems = [
     btnText: "Order now",
     image: Images.banner2,
     lightBg: true,
+    textColor: "#6B3A5B",
   },
 ];
 
@@ -82,7 +83,7 @@ export default function Home({ navigation }: RootTabScreenProps<"Home">) {
               text={item.text}
               btnText={item.btnText}
               image={item.image}
-              lightBg={item.lightBg}
+              textColor={item.textColor}
               onPress={() => navigation.navigate("AppNavigation", { screen: "FinishOrder" })}
             />
           )}
@@ -127,9 +128,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   searchBarView: {
+    width: "100%",
     flexDirection: "row",
     columnGap: Sizes.small,
-    width: "100%",
     marginTop: Sizes.large,
     ...Styles.g.screenPadding,
   },
