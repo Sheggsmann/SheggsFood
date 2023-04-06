@@ -19,8 +19,10 @@ export type RootStackScreenprops<Screen extends keyof RootStackParamList> = Nati
 >;
 
 export type RootTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  Home: undefined;
+  Profile: undefined;
+  Order: undefined;
+  Chat: undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
@@ -43,6 +45,11 @@ export type AuthStackParamList = {
   Via: undefined;
   ResetPassword: undefined;
   ResetPasswordSuccess: undefined;
+  Success: {
+    successText: string;
+    buttonText: string;
+    destScreen?: string;
+  };
 };
 
 export type AuthStackScreenProps<Screen extends keyof AuthStackParamList> = NativeStackScreenProps<
@@ -51,20 +58,19 @@ export type AuthStackScreenProps<Screen extends keyof AuthStackParamList> = Nati
 >;
 
 export type AppStackParamList = {
-  Home: undefined;
+  HomeNavigator: undefined;
   Explore: undefined;
   Filter: undefined;
   ExploreMenu: undefined;
-  Message: undefined;
+  Messages: { user: IChatList };
   ChatDetails: undefined;
-  CallRinging: undefined;
+  CallRinging: { user: IUser };
   Call: undefined;
   FinishOrder: undefined;
   RateFood: undefined;
   RateRestaurant: undefined;
   Voucher: undefined;
   Notification: undefined;
-  Order: undefined;
   Payment: undefined;
   EditPayment: undefined;
   EditLocation: undefined;
@@ -73,7 +79,6 @@ export type AppStackParamList = {
   TrackOrder: undefined;
   ProductDetail: undefined;
   DetailMenu: undefined;
-  Profile: undefined;
 };
 
 export type AppStackScreenProps<Screen extends keyof AppStackParamList> = NativeStackScreenProps<
@@ -86,3 +91,46 @@ declare global {
     interface RootParamList extends RootStackParamList {}
   }
 }
+
+export type INotification = {
+  id: number;
+  type: "success" | "money" | "decline";
+  message: string;
+  timestamp: string;
+};
+
+export type IUser = {
+  id: number;
+  name: string;
+  image: any;
+  mobileNumber?: string;
+};
+
+export type IChatList = IUser & {
+  isOnline: boolean;
+  lastMessage: string;
+  timestamp: string;
+};
+
+export type IMessage = {
+  id: number;
+  senderId: number;
+  receiverId: number;
+  message: string;
+  timestamp: Date;
+};
+
+export type IRestaurant = {
+  id: number;
+  image: any;
+  name: string;
+  distance: { time: string };
+};
+
+export type IFood = {
+  id: number;
+  image: any;
+  name: string;
+  restaurantName: string;
+  price: number;
+};

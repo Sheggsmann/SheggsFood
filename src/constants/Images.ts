@@ -26,6 +26,8 @@ const restaurant1 = require("@src/assets/images/resturants/restaurant-1.png");
 const restaurant2 = require("@src/assets/images/resturants/restaurant-2.png");
 const restaurant3 = require("@src/assets/images/resturants/restaurant-3.png");
 const restaurant4 = require("@src/assets/images/resturants/restaurant-4.png");
+const restaurant5 = require("@src/assets/images/resturants/restaurant-5.png");
+const restaurant6 = require("@src/assets/images/resturants/restaurant-6.png");
 
 // Payments
 const payoneer = require("@src/assets/images/payment/payoneer.png");
@@ -47,7 +49,8 @@ const food2 = require("@src/assets/images/foods/food-2.png");
 const food3 = require("@src/assets/images/foods/food-3.png");
 
 // Banner
-const banner = require("@src/assets/images/banners/banner-1.png");
+const banner1 = require("@src/assets/images/banners/banner-1.png");
+const banner2 = require("@src/assets/images/banners/banner-2.png");
 
 export default {
   logo,
@@ -75,6 +78,8 @@ export default {
   restaurant2,
   restaurant3,
   restaurant4,
+  restaurant5,
+  restaurant6,
 
   payoneer,
   payoneerLight,
@@ -92,5 +97,6 @@ export default {
   food2,
   food3,
 
-  banner,
+  banner1,
+  banner2,
 };

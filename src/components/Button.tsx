@@ -1,26 +1,33 @@
-import { Image, StyleSheet, TouchableOpacity, ViewStyle } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, ViewStyle, TextStyle } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Sizes } from "@constants/Theme";
 import Icon from "@constants/Icon";
 import FigText from "./StyledText";
 import Styles from "@constants/Styles";
 import Colors from "@constants/Colors";
+import { Haptics } from "@src/utils/haptics";
 
 type ButtonProps = {
   text: string;
   onPress: () => void;
   containerStyle?: ViewStyle;
+  textStyle?: TextStyle;
 };
 
-export function GradientButton({ text, onPress, containerStyle }: ButtonProps) {
+type GradientButtonProps = ButtonProps;
+
+export function GradientButton({ text, onPress, containerStyle }: GradientButtonProps) {
   return (
     <TouchableOpacity
       style={[styles.container, containerStyle]}
       activeOpacity={Styles.activeOpacity}
-      onPress={onPress}
+      onPress={() => {
+        Haptics.medium();
+        onPress();
+      }}
     >
       <LinearGradient
-        colors={[Colors.lightGreen, Colors.green]}
+        colors={[Colors.lightPrimary, Colors.primary]}
         start={{ x: 0.1, y: 0.2 }}
         style={{ width: "100%", height: "100%", alignItems: "center", justifyContent: "center" }}
       >
@@ -32,14 +39,17 @@ export function GradientButton({ text, onPress, containerStyle }: ButtonProps) {
   );
 }
 
-export function Button({ text, onPress, containerStyle }: ButtonProps) {
+export function Button({ text, onPress, textStyle, containerStyle }: ButtonProps) {
   return (
     <TouchableOpacity
       style={[styles.container, containerStyle]}
       activeOpacity={Styles.activeOpacity}
-      onPress={onPress}
+      onPress={() => {
+        Haptics.medium();
+        onPress();
+      }}
     >
-      <FigText weight="medium" style={styles.text}>
+      <FigText weight="medium" style={[styles.text, textStyle]}>
         {text}
       </FigText>
     </TouchableOpacity>
@@ -52,7 +62,10 @@ export function IconTextButton({ text, image, onPress, containerStyle }: IconTex
   return (
     <TouchableOpacity
       style={[styles.container, styles.container2, containerStyle]}
-      onPress={onPress}
+      onPress={() => {
+        Haptics.medium();
+        onPress();
+      }}
       activeOpacity={Styles.activeOpacity}
     >
       <Image source={image} style={{ width: Sizes.icon, height: Sizes.icon }} />
@@ -61,18 +74,27 @@ export function IconTextButton({ text, image, onPress, containerStyle }: IconTex
   );
 }
 
-type IconButtonProps = { icon: keyof typeof Icon; onPress: () => void; containerStyle?: ViewStyle };
+type IconButtonProps = {
+  icon: keyof typeof Icon;
+  onPress: () => void;
+  containerStyle?: ViewStyle;
+  size?: number;
+  tintColor?: string;
+};
 
-export function IconButton({ icon, onPress, containerStyle }: IconButtonProps) {
+export function IconButton({ icon, size, tintColor, onPress, containerStyle }: IconButtonProps) {
   return (
     <TouchableOpacity
       activeOpacity={Styles.activeOpacity}
-      onPress={onPress}
+      onPress={() => {
+        Haptics.medium();
+        onPress();
+      }}
       style={[
         {
           width: 50,
           height: 50,
-          backgroundColor: Colors.lightOrange,
+          backgroundColor: Colors.lightSecondary,
           borderRadius: Sizes.radius,
           alignItems: "center",
           justifyContent: "center",
@@ -80,7 +102,10 @@ export function IconButton({ icon, onPress, containerStyle }: IconButtonProps) {
         containerStyle,
       ]}
     >
-      <Image source={Icon[icon]} style={{ width: Sizes.icon, height: Sizes.icon }} />
+      <Image
+        source={Icon[icon]}
+        style={{ width: size ? size : Sizes.icon, height: size ? size : Sizes.icon, tintColor }}
+      />
     </TouchableOpacity>
   );
 }
@@ -91,6 +116,8 @@ const styles = StyleSheet.create({
     width: 140,
     borderRadius: Sizes.radius,
     overflow: "hidden",
+    alignItems: "center",
+    justifyContent: "center",
   },
   container2: {
     flexDirection: "row",

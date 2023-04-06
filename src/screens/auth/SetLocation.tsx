@@ -56,7 +56,16 @@ export default function SetLocation({ navigation }: AuthStackScreenProps<"SetLoc
           />
         </View>
 
-        <GradientButton text="Next" containerStyle={styles.button} onPress={() => {}} />
+        <GradientButton
+          text="Next"
+          containerStyle={styles.button}
+          onPress={() =>
+            navigation.navigate("Success", {
+              successText: "Your Profile Is Ready To Use",
+              buttonText: "Try Order",
+            })
+          }
+        />
       </View>
     </SafeAreaView>
   );

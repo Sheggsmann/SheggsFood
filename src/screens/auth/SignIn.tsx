@@ -1,6 +1,6 @@
 import { StyleSheet, ImageBackground, Image, KeyboardAvoidingView, ScrollView } from "react-native";
 import { View } from "@components/Themed";
-import { AuthStackScreenProps } from "@src/types";
+import { AuthStackScreenProps, RootStackScreenprops } from "@src/types";
 import { GradientButton, IconTextButton } from "@components/Button";
 import { Input } from "@components/Input";
 import { Sizes } from "@constants/Theme";
@@ -12,7 +12,7 @@ import Images from "@constants/Images";
 import Link from "@components/Link";
 import FigText from "@components/StyledText";
 
-export default function SignIn({ navigation }: AuthStackScreenProps<"SignIn">) {
+export default function SignIn({ navigation }: RootStackScreenprops<"AuthNavigation">) {
   const colorScheme = useColorScheme();
 
   return (
@@ -82,18 +82,19 @@ export default function SignIn({ navigation }: AuthStackScreenProps<"SignIn">) {
                   text="Forgot Your Password?"
                   style={{
                     fontSize: Sizes.smallFont,
-                    color: Colors.green,
-                    textDecorationColor: Colors.green,
+                    color: Colors.primary,
+                    textDecorationColor: Colors.primary,
                     textDecorationLine: "underline",
                     marginTop: Sizes.xLarge,
                   }}
+                  onPress={() => navigation.navigate("AuthNavigation", { screen: "Via" })}
                 />
               </View>
 
               {/* Button */}
               <GradientButton
                 text="Login"
-                onPress={() => console.log("Login")}
+                onPress={() => navigation.replace("AppNavigation", { screen: "HomeNavigator" })}
                 containerStyle={styles.button}
               />
             </View>

@@ -9,6 +9,10 @@ import PaymentMethod from "@screens/auth/PaymentMethod";
 import UploadPhoto from "@screens/auth/UploadPhoto";
 import UploadPreview from "@screens/auth/UploadPreview";
 import SetLocation from "@screens/auth/SetLocation";
+import Success from "@screens/auth/Success";
+import Verification from "@screens/auth/Verification";
+import ResetPassword from "@screens/auth/ResetPassword";
+import Via from "@screens/auth/Via";
 
 type StackParamList = AuthStackParamList;
 
@@ -28,6 +32,14 @@ export default function AuthNavigator() {
       />
       <Stack.Screen name="UploadPhoto" component={UploadPhoto} options={{ headerShown: false }} />
       <Stack.Screen name="SetLocation" component={SetLocation} options={{ headerShown: false }} />
+      <Stack.Screen name="Success" component={Success} options={{ headerShown: false }} />
+      <Stack.Screen name="Verification" component={Verification} options={{ headerShown: false }} />
+      <Stack.Screen name="Via" component={Via} options={{ headerShown: false }} />
+      <Stack.Screen
+        name="ResetPassword"
+        component={ResetPassword}
+        options={{ headerShown: false }}
+      />
       <Stack.Screen
         name="UploadPreview"
         component={UploadPreview}

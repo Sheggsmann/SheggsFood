@@ -1,4 +1,4 @@
-import { ViewStyle, Image, Pressable } from "react-native";
+import { ViewStyle, Image, Pressable, ImageStyle } from "react-native";
 import { TextInput, TextInputProps } from "./Themed";
 import { View } from "./Themed";
 import { Font, Sizes } from "@constants/Theme";
@@ -11,6 +11,7 @@ type InputProps = TextInputProps & {
   icon?: keyof typeof Icon;
   rightIcon?: keyof typeof Icon;
   rightIconPressed?: () => void;
+  rightIconStyle?: ImageStyle;
   containerStyle?: ViewStyle;
   inputStyle?: ViewStyle;
 };
@@ -20,6 +21,7 @@ export function Input({
   icon,
   rightIcon,
   rightIconPressed,
+  rightIconStyle,
   containerStyle,
   inputStyle,
   ...otherTextProps
@@ -31,7 +33,7 @@ export function Input({
       style={[
         {
           width: "100%",
-          backgroundColor: Colors.lightGrey,
+          backgroundColor: colorScheme === "light" ? Colors.grey : Colors.lightGrey,
           height: 57,
           minWidth: 100,
           borderRadius: Sizes.radius,
@@ -78,7 +80,12 @@ export function Input({
         >
           <Image
             source={Icon[rightIcon]}
-            style={{ width: Sizes.icon, height: Sizes.icon, marginHorizontal: Sizes.small }}
+            style={{
+              width: Sizes.icon,
+              height: Sizes.icon,
+              marginHorizontal: Sizes.small,
+              ...rightIconStyle,
+            }}
           />
         </Pressable>
       )}

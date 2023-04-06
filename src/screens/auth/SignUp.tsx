@@ -132,8 +132,8 @@ export default function SignUp({ navigation }: AuthStackScreenProps<"SignUp">) {
                 text="already have an account?"
                 style={{
                   fontSize: Sizes.smallFont,
-                  color: Colors.green,
-                  textDecorationColor: Colors.green,
+                  color: Colors.primary,
+                  textDecorationColor: Colors.primary,
                   textDecorationLine: "underline",
                   marginTop: Sizes.large,
                   alignSelf: "center",

@@ -9,6 +9,7 @@
       "@navigation/*": ["src/navigation/*"],
       "@constants/*": ["src/constants/*"],
       "@screens/*": ["src/screens/*"],
+      "@mocks/*": ["src/mocks/*"],
       "@hooks/*": ["src/hooks/*"],
       "@src/*": ["src/*"]
     }

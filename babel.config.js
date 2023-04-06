@@ -14,6 +14,7 @@ module.exports = function (api) {
             "@constants": "./src/constants",
             "@screens": "./src/screens",
             "@hooks": "./src/hooks",
+            "@mocks": "./src/mocks",
             "@src": "./src",
           },
         },

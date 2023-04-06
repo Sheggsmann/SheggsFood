@@ -1,4 +1,5 @@
 import Styles from "@constants/Styles";
+import { Haptics } from "@src/utils/haptics";
 import { TouchableOpacity, TextStyle } from "react-native";
 import FigText, { FontTypes } from "./StyledText";
 
@@ -11,7 +12,13 @@ type LinkProps = {
 
 export default function Link({ text, onPress, style, weight }: LinkProps) {
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={Styles.activeOpacity}>
+    <TouchableOpacity
+      onPress={() => {
+        Haptics.medium();
+        onPress && onPress();
+      }}
+      activeOpacity={Styles.activeOpacity}
+    >
       <FigText weight={weight} style={style}>
         {text}
       </FigText>

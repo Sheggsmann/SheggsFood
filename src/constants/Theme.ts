@@ -13,6 +13,7 @@ export const Sizes = {
   font: 16,
   titleFont: 24,
   icon: 25,
+  mediumFont: 18,
   bigFont: 30,
   radius: 15,
   medium: 16,
