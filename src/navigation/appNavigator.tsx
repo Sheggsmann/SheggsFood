@@ -8,6 +8,7 @@ import Call from "@screens/app/chat/Call";
 import FinishOrder from "@screens/app/orders/FinishOrder";
 import RateFood from "@screens/app/orders/RateFood";
 import RateRestaurant from "@screens/app/orders/RateRestaurant";
+import OrderDetails from "@screens/app/orders/OrderDetails";
 
 type StackParamList = AppStackParamList;
 
@@ -24,6 +25,7 @@ export default function AppNavigator() {
       <Stack.Screen name="FinishOrder" component={FinishOrder} />
       <Stack.Screen name="RateFood" component={RateFood} />
       <Stack.Screen name="RateRestaurant" component={RateRestaurant} />
+      <Stack.Screen name="OrderDetails" component={OrderDetails} />
     </Stack.Navigator>
   );
 }

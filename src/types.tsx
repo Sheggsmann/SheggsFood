@@ -75,6 +75,7 @@ export type AppStackParamList = {
   EditPayment: undefined;
   EditLocation: undefined;
   YourOrders: undefined;
+  OrderDetails: undefined;
   SetLocation: undefined;
   TrackOrder: undefined;
   ProductDetail: undefined;
