@@ -17,7 +17,10 @@ export default {
     },
     padding: { paddingHorizontal: Sizes.large },
     screenPadding: { flex: 1, paddingHorizontal: Sizes.large, paddingTop: Sizes.medium },
-    header: { marginTop: Sizes.large, backgroundColor: "transparent" },
+    header: {
+      marginTop: Device.iPhoneNotch ? Sizes.large : Sizes.xxLarge,
+      backgroundColor: "transparent",
+    },
     title: { fontSize: Sizes.xxLarge },
     transparent: { backgroundColor: "transparent" },
     formSpacing: { marginBottom: Sizes.small },
@@ -51,7 +54,7 @@ export default {
 
   insets({ top, bottom }: { top: number; bottom?: number }) {
     return {
-      paddingTop: top + Sizes.xLarge,
+      paddingTop: top + (Device.iPhoneNotch ? Sizes.xLarge : Sizes.xxLarge),
       paddingBottom: bottom ? bottom : 0,
     };
   },
@@ -64,6 +67,7 @@ export default {
       screen: {
         backgroundColor: colorScheme === "light" ? Colors.light.background : Colors.dark.background,
         flex: 1,
+        paddingVertical: Device.iPhoneNotch ? 0 : Sizes.large,
       },
     };
   },

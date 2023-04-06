@@ -20,7 +20,10 @@ export default function RateFood({ navigation }: AppStackScreenProps<"RateFood">
 
   return (
     <Pressable
-      style={[Styles.mode(colorScheme).container, { paddingBottom: insets.bottom }]}
+      style={[
+        Styles.mode(colorScheme).container,
+        { paddingBottom: insets.bottom | Sizes.bottomInset },
+      ]}
       onPress={() => {
         if (Keyboard.isVisible()) Keyboard.dismiss();
       }}

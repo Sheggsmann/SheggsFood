@@ -20,6 +20,10 @@ export default function BottomTabNavigator() {
 
   const insets = useSafeAreaInsets();
 
+  if (!Device.iPhoneNotch) {
+    console.log(insets);
+  }
+
   const shadow = colorScheme === "light" ? Styles.g.lightShadow : Styles.g.darkShadow;
 
   return (
@@ -37,7 +41,7 @@ export default function BottomTabNavigator() {
           right: Device.width * 0.05,
           width: Device.width * 0.9,
           height: 75,
-          bottom: insets.bottom,
+          bottom: insets.bottom || Sizes.bottomInset,
           borderRadius: Sizes.radius,
           paddingVertical: Sizes.xLarge,
           paddingHorizontal: Sizes.xLarge,

@@ -20,7 +20,10 @@ export default function RateRestaurant({ navigation }: AppStackScreenProps<"Rate
 
   return (
     <Pressable
-      style={[Styles.mode(colorScheme).container, { paddingBottom: insets.bottom }]}
+      style={[
+        Styles.mode(colorScheme).container,
+        { paddingBottom: insets.bottom | Sizes.bottomInset },
+      ]}
       onPress={() => {
         if (Keyboard.isVisible()) Keyboard.dismiss();
       }}

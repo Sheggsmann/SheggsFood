@@ -30,16 +30,16 @@ const Stack = createNativeStackNavigator<StackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator initialRouteName="AuthNavigation">
-      {/* <Stack.Screen
+      <Stack.Screen
         name="AuthNavigation"
         component={AuthNavigator}
         options={{ headerShown: false }}
-      /> */}
-      <Stack.Screen
+      />
+      {/* <Stack.Screen
         name="AppNavigation"
         component={AppNavigator}
         options={{ headerShown: false }}
-      />
+      /> */}
     </Stack.Navigator>
   );
 }

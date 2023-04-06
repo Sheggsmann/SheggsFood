@@ -105,6 +105,9 @@ export default function SignIn({ navigation }: RootStackScreenprops<"AuthNavigat
   );
 }
 
+const logoWidth = Device.width * (Device.height > 800 ? 0.6 : 0.5);
+const logoHeight = Device.height * (Device.height > 800 ? 0.4 : 0.35);
+
 const styles = StyleSheet.create({
   imageBG: {
     flex: 1,
@@ -115,8 +118,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   logo: {
-    width: Device.width * 0.6,
-    height: Device.height * 0.4,
+    width: logoWidth,
+    height: logoHeight,
     resizeMode: "contain",
   },
   formContainer: {

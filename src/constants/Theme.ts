@@ -11,6 +11,7 @@ export const Sizes = {
   smallFont: 14,
   tinyFont: 12,
   font: 16,
+  bottomInset: 20,
   titleFont: 24,
   icon: 25,
   mediumFont: 18,
