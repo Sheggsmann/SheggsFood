@@ -21,7 +21,7 @@ export default function ResetPassword({ navigation }: AuthStackScreenProps<"Rese
     <SafeAreaView style={[Styles.mode(colorScheme).screen]}>
       <Image source={Images.pattern1} style={Styles.g.imageBg2} />
 
-      <View style={[Styles.g.screenPadding, Styles.g.transparent]}>
+      <View transparent style={[Styles.g.screenPadding, Styles.vPadding]}>
         {/* Header Button */}
         <IconButton
           icon="back"

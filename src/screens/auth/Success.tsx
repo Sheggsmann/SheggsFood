@@ -19,7 +19,12 @@ export default function Success({ navigation, route }: AuthStackScreenProps<"Suc
   const insets = useSafeAreaInsets();
 
   return (
-    <View style={[Styles.mode(colorScheme).container, { paddingBottom: insets.bottom }]}>
+    <View
+      style={[
+        Styles.mode(colorScheme).container,
+        { paddingBottom: insets.bottom || Sizes.bottomInset },
+      ]}
+    >
       <ImageBackground
         source={colorScheme === "light" ? Images.patternWhite : Images.pattern}
         style={Styles.imageBG}

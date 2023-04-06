@@ -5,6 +5,7 @@ import Icon from "@constants/Icon";
 import FigText from "./StyledText";
 import Styles from "@constants/Styles";
 import Colors from "@constants/Colors";
+import Device from "@constants/Device";
 import { Haptics } from "@src/utils/haptics";
 
 type ButtonProps = {
@@ -112,7 +113,7 @@ export function IconButton({ icon, size, tintColor, onPress, containerStyle }: I
 
 const styles = StyleSheet.create({
   container: {
-    height: 57,
+    height: Device.isSmall ? 50 : 57,
     width: 140,
     borderRadius: Sizes.radius,
     overflow: "hidden",

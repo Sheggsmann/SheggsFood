@@ -105,8 +105,8 @@ export default function SignIn({ navigation }: RootStackScreenprops<"AuthNavigat
   );
 }
 
-const logoWidth = Device.width * (Device.height > 800 ? 0.6 : 0.5);
-const logoHeight = Device.height * (Device.height > 800 ? 0.4 : 0.35);
+const logoWidth = Device.width * (Device.height > 800 ? 0.55 : 0.45);
+const logoHeight = Device.height * (Device.height > 800 ? 0.38 : 0.3);
 
 const styles = StyleSheet.create({
   imageBG: {

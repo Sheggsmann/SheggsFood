@@ -5,6 +5,7 @@ import { Font, Sizes } from "@constants/Theme";
 import Icon from "@constants/Icon";
 import Colors from "@constants/Colors";
 import useColorScheme from "@hooks/useColorScheme";
+import Device from "@constants/Device";
 
 type InputProps = TextInputProps & {
   placeholder?: string;
@@ -34,7 +35,7 @@ export function Input({
         {
           width: "100%",
           backgroundColor: colorScheme === "light" ? Colors.grey : Colors.lightGrey,
-          height: 57,
+          height: Device.isSmall ? 50 : 57,
           minWidth: 100,
           borderRadius: Sizes.radius,
           overflow: "hidden",
