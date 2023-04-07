@@ -20,7 +20,10 @@ export default function FinishOrder({ navigation, route }: AppStackScreenProps<"
 
   return (
     <Pressable
-      style={[Styles.mode(colorScheme).container, { paddingBottom: insets.bottom }]}
+      style={[
+        Styles.mode(colorScheme).container,
+        { paddingBottom: insets.bottom || Sizes.bottomInset },
+      ]}
       onPress={() => {
         if (Keyboard.isVisible()) Keyboard.dismiss();
       }}
@@ -64,7 +67,9 @@ export default function FinishOrder({ navigation, route }: AppStackScreenProps<"
 
           {/* Feedback Component */}
           <Feedback
-            onSubmit={() => {}}
+            onSubmit={() => {
+              navigation.goBack();
+            }}
             onSkip={() => {
               navigation.navigate("RateFood");
             }}

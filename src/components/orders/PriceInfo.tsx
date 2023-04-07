@@ -3,11 +3,11 @@ import FigText from "@components/StyledText";
 import Device from "@constants/Device";
 import Colors from "@constants/Colors";
 import { Sizes } from "@constants/Theme";
-import Images from "@constants/Images";
 import { LinearGradient } from "expo-linear-gradient";
 import { Button } from "@components/Button";
+import Images from "@constants/Images";
 import Styles from "@constants/Styles";
-import { useColorScheme } from "react-native";
+import useColorScheme from "@hooks/useColorScheme";
 
 type PriceInfoprops = {
   onButtonPress?: () => void;

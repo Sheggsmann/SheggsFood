@@ -76,7 +76,7 @@ export default function Messages({ navigation, route }: AppStackScreenProps<"Mes
             onSend={onSend}
             containerStyle={{
               position: "absolute",
-              bottom: insets.bottom,
+              bottom: insets.bottom || Sizes.bottomInset,
               // bottom: 350,
               paddingHorizontal: Sizes.large,
             }}

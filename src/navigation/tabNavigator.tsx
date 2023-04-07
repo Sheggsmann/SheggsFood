@@ -37,7 +37,7 @@ export default function BottomTabNavigator() {
           right: Device.width * 0.05,
           width: Device.width * 0.9,
           height: 75,
-          bottom: insets.bottom,
+          bottom: insets.bottom || Sizes.bottomInset,
           borderRadius: Sizes.radius,
           paddingVertical: Sizes.xLarge,
           paddingHorizontal: Sizes.xLarge,

@@ -17,7 +17,10 @@ export default {
     },
     padding: { paddingHorizontal: Sizes.large },
     screenPadding: { flex: 1, paddingHorizontal: Sizes.large, paddingTop: Sizes.medium },
-    header: { marginTop: Sizes.large, backgroundColor: "transparent" },
+    header: {
+      marginTop: Device.iOS ? Sizes.xxSmall : Sizes.xxLarge,
+      backgroundColor: "transparent",
+    },
     title: { fontSize: Sizes.xxLarge },
     transparent: { backgroundColor: "transparent" },
     formSpacing: { marginBottom: Sizes.small },
@@ -48,10 +51,14 @@ export default {
     flex: 1,
   },
   screenPadding: { paddingHorizontal: Sizes.large },
+  vPadding: {
+    paddingBottom: Device.iOS ? (Device.iPhoneNotch ? 0 : Sizes.xSmall) : Sizes.large,
+    paddingTop: Device.iOS ? (Device.iPhoneNotch ? Sizes.small : Sizes.xxSmall) : Sizes.xxLarge,
+  },
 
   insets({ top, bottom }: { top: number; bottom?: number }) {
     return {
-      paddingTop: top + Sizes.xLarge,
+      paddingTop: top + (Device.iPhoneNotch ? Sizes.xLarge : Sizes.xxLarge),
       paddingBottom: bottom ? bottom : 0,
     };
   },

@@ -148,6 +148,11 @@ export default function SignUp({ navigation }: AuthStackScreenProps<"SignUp">) {
   );
 }
 
+console.log(Device.aspectRatio);
+
+const logoWidth = Device.width * (Device.height > 800 ? 0.55 : 0.45);
+const logoHeight = Device.height * (Device.height > 800 ? 0.38 : 0.3);
+
 const styles = StyleSheet.create({
   logoContainer: {
     backgroundColor: "transparent",
@@ -155,8 +160,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   logo: {
-    width: Device.width * 0.6,
-    height: Device.height * 0.4,
+    width: logoWidth,
+    height: logoHeight,
     resizeMode: "contain",
   },
   formContainer: {
