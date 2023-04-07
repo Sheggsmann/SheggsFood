@@ -79,6 +79,8 @@ export type AppStackParamList = {
   TrackOrder: undefined;
   ProductDetail: undefined;
   DetailMenu: undefined;
+  OrderDetails: undefined;
+  ConfirmOrder: undefined;
 };
 
 export type AppStackScreenProps<Screen extends keyof AppStackParamList> = NativeStackScreenProps<
@@ -133,4 +135,11 @@ export type IFood = {
   name: string;
   restaurantName: string;
   price: number;
+};
+
+export type IOrder = {
+  id: number;
+  food: IFood;
+  restaurant: IRestaurant;
+  quantity: number;
 };

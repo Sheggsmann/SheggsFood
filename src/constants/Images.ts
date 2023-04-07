@@ -11,6 +11,7 @@ const money = require("@src/assets/images/money.png");
 const pattern = require("@src/assets/images/pattern.png");
 const patternWhite = require("@src/assets/images/pattern-white.png");
 const pattern1 = require("@src/assets/images/pattern-1.png");
+const pattern2 = require("@src/assets/images/pattern-2.png");
 const xButton = require("@src/assets/images/x-button.png");
 const photo = require("@src/assets/images/photo.png");
 const pinLogo = require("@src/assets/images/pin-logo.png");
@@ -65,6 +66,7 @@ export default {
   pattern,
   patternWhite,
   pattern1,
+  pattern2,
   xButton,
   photo,
   pinLogo,

@@ -20,6 +20,8 @@ if (iOS) {
   }
 }
 
+const isSmall = height < 800;
+
 export default {
   android,
   aspectRatio,
@@ -28,4 +30,5 @@ export default {
   iPhoneNotch,
   web,
   width,
+  isSmall,
 };

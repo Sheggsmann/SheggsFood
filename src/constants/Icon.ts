@@ -17,7 +17,10 @@ const home = require("@src/assets/icons/home.png");
 const buy = require("@src/assets/icons/buy.png");
 const call = require("@src/assets/icons/call.png");
 const send = require("@src/assets/icons/send.png");
-const volumeUp = require("@src/assets/icons/volume-up.png")
+const volumeUp = require("@src/assets/icons/volume-up.png");
+const trash = require("@src/assets/icons/trash.png");
+const plus = require("@src/assets/icons/plus.png");
+const minus = require("@src/assets/icons/minus.png");
 
 export default {
   chat,
@@ -39,5 +42,8 @@ export default {
   buy,
   call,
   send,
-  volumeUp
+  volumeUp,
+  trash,
+  plus,
+  minus,
 };
