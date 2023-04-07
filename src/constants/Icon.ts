@@ -10,6 +10,7 @@ const notificationIcon = require("@src/assets/icons/notification-icon.png");
 const show = require("@src/assets/icons/show.png");
 const star = require("@src/assets/icons/star.png");
 const star1 = require("@src/assets/icons/star-1.png");
+const halfStar = require("@src/assets/icons/half-star.png");
 const volumeOff = require("@src/assets/icons/volume-off.png");
 const check = require("@src/assets/icons/check-list-icon.png");
 const back = require("@src/assets/icons/back.png");
@@ -41,6 +42,7 @@ export default {
   show,
   star,
   star1,
+  halfStar,
   volumeOff,
   check,
   back,

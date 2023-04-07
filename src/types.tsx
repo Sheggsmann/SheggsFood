@@ -69,6 +69,8 @@ export type AppStackParamList = {
   FinishOrder: undefined;
   RateFood: undefined;
   RateRestaurant: undefined;
+  RestaurantDetail: undefined;
+  FoodDetail: undefined;
   Voucher: undefined;
   Notification: undefined;
   Payment: undefined;
@@ -122,11 +124,28 @@ export type IMessage = {
   timestamp: Date;
 };
 
+export type ITestimonial = {
+  id: number;
+  name: string;
+  image: any;
+  testimonial: string;
+  rating: number;
+  date: string;
+};
+
 export type IRestaurant = {
   id: number;
   image: any;
   name: string;
-  distance: { time: string };
+  distance: { time: string; km?: number };
+  bgImage?: any;
+  rating?: number;
+  description?: string;
+  menu?: {
+    popular: IFood[];
+  };
+  testimonials?: ITestimonial[];
+  tag?: string;
 };
 
 export type IFood = {
@@ -135,6 +154,11 @@ export type IFood = {
   name: string;
   restaurantName: string;
   price: number;
+  description?: string;
+  rating?: number;
+  bgImage?: any;
+  ordersCount: number;
+  tag?: string;
 };
 
 export type IOrder = {

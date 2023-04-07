@@ -12,6 +12,8 @@ import OrderDetails from "@screens/app/orders/OrderDetails";
 import ConfirmOrder from "@screens/app/orders/ConfirmOrder";
 import EditLocation from "@screens/app/orders/EditLocation";
 import EditPayment from "@screens/app/orders/EditPayment";
+import RestaurantDetail from "@screens/app/restaurant/RestaurantDetail";
+import FoodDetail from "@screens/app/restaurant/FoodDetail";
 
 type StackParamList = AppStackParamList;
 
@@ -32,6 +34,8 @@ export default function AppNavigator() {
       <Stack.Screen name="ConfirmOrder" component={ConfirmOrder} />
       <Stack.Screen name="EditLocation" component={EditLocation} />
       <Stack.Screen name="EditPayment" component={EditPayment} />
+      <Stack.Screen name="RestaurantDetail" component={RestaurantDetail} />
+      <Stack.Screen name="FoodDetail" component={FoodDetail} />
     </Stack.Navigator>
   );
 }

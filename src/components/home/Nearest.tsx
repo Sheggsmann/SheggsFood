@@ -20,7 +20,7 @@ export default function Nearest({ data }: NearestProp) {
       renderItem={({ item }) => (
         <Restaurant
           restaurant={item}
-          onPress={() => navigation.navigate("AppNavigation", { screen: "OrderDetails" })}
+          onPress={() => navigation.navigate("AppNavigation", { screen: "RestaurantDetail" })}
         />
       )}
       contentContainerStyle={{

@@ -49,6 +49,39 @@ export default function Food({ food, onPress, containerStyle }: FoodProps) {
   );
 }
 
+export function Food2({ food, onPress, containerStyle }: FoodProps) {
+  return (
+    <View
+      lightColor={Colors.grey}
+      darkColor={Colors.darkTint}
+      style={[styles.container2, containerStyle]}
+    >
+      <Pressable
+        style={{ flex: 1 }}
+        onPress={() => {
+          Haptics.medium();
+          onPress && onPress();
+        }}
+      >
+        <View transparent style={styles.imageContainer2}>
+          <Image source={food.image} style={styles.image} />
+        </View>
+        <View transparent style={styles.textContainer2}>
+          <FigText style={{ fontSize: Sizes.font }}>{food.name}</FigText>
+          <FigText
+            weight="regular"
+            lightColor={Colors.light.text2}
+            darkColor={Colors.dark.text2}
+            style={{ fontSize: Sizes.font }}
+          >
+            {food.price} $
+          </FigText>
+        </View>
+      </Pressable>
+    </View>
+  );
+}
+
 const styles = StyleSheet.create({
   container: {
     height: 85,
@@ -59,10 +92,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
     columnGap: Sizes.small,
   },
+  container2: {
+    height: 185,
+    width: 150,
+    borderRadius: Sizes.radius,
+    padding: Sizes.medium,
+  },
   imageContainer: {
     width: 60,
     height: 60,
     borderRadius: Sizes.radius / 2,
+    alignItems: "center",
+  },
+  imageContainer2: {
+    flex: 0.75,
     alignItems: "center",
   },
   image: {
@@ -73,5 +116,10 @@ const styles = StyleSheet.create({
   textContainer: {
     flex: 1,
     justifyContent: "flex-start",
+  },
+  textContainer2: {
+    flex: 0.35,
+    alignItems: "center",
+    justifyContent: "space-around",
   },
 });

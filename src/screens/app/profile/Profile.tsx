@@ -46,7 +46,11 @@ export default function Profile() {
         onMaxHeightReached={() => setScrollEnabled(true)}
         onMinHeightReached={() => setScrollEnabled(false)}
       >
-        <ScrollView contentContainerStyle={[Styles.screenPadding]} scrollEnabled={scrollEnabled}>
+        <ScrollView
+          contentContainerStyle={[Styles.screenPadding]}
+          scrollEnabled={scrollEnabled}
+          showsVerticalScrollIndicator={false}
+        >
           <View style={{ flex: 1 }}>
             <View style={styles.membership}>
               <FigText lightColor={Colors.yellow} darkColor={Colors.yellow}>

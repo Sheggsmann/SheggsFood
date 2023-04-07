@@ -14,6 +14,7 @@ import FigText from "@components/StyledText";
 import Device from "@constants/Device";
 import Styles from "@constants/Styles";
 import Profile from "@screens/app/profile/Profile";
+import OrderDetails from "@screens/app/orders/OrderDetails";
 
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
@@ -72,7 +73,7 @@ export default function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Order"
-        component={Home}
+        component={OrderDetails}
         options={() => ({
           tabBarIcon: ({ focused, color }) => (
             <TabBarIcon name="buy" color={color} focused={focused} />

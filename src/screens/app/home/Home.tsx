@@ -112,7 +112,10 @@ export default function Home({ navigation }: RootTabScreenProps<"Home">) {
             <Link text="View More" style={{ color: Colors.secondary }} />
           </View>
 
-          <Popular data={foods} />
+          <Popular
+            data={foods}
+            onPress={() => navigation.navigate("AppNavigation", { screen: "FoodDetail" })}
+          />
         </View>
 
         <View transparent style={{ height: 100 }}></View>

@@ -58,6 +58,7 @@ const food4 = require("@src/assets/images/foods/food-4.png");
 const food5 = require("@src/assets/images/foods/food-5.png");
 const menu1 = require("@src/assets/images/foods/menu-1.png");
 const menu2 = require("@src/assets/images/foods/menu-2.png");
+const foodDetail = require("@src/assets/images/foods/food-detail.png");
 
 // Banner
 const banner1 = require("@src/assets/images/banners/banner-1.png");
@@ -116,6 +117,7 @@ export default {
   food5,
   menu1,
   menu2,
+  foodDetail,
 
   banner1,
   banner2,
