@@ -20,4 +20,18 @@ export const foods: IFood[] = [
     restaurantName: "Warung Herbal",
     price: 15,
   },
+  {
+    id: 4,
+    image: Images.food4,
+    name: "Egg Warmoil",
+    restaurantName: "Warung Herbal",
+    price: 35,
+  },
+  {
+    id: 5,
+    image: Images.food5,
+    name: "Nat IceCream",
+    restaurantName: "Icy Spicy",
+    price: 16,
+  },
 ];

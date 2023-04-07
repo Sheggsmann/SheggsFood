@@ -16,11 +16,16 @@ const xButton = require("@src/assets/images/x-button.png");
 const photo = require("@src/assets/images/photo.png");
 const pinLogo = require("@src/assets/images/pin-logo.png");
 
+// Voucher
+const voucher = require("@src/assets/images/voucher.png");
+
 // Users
 const user1 = require("@src/assets/images/users/profile-1.png");
 const user2 = require("@src/assets/images/users/profile-2.png");
 const user3 = require("@src/assets/images/users/profile-3.png");
 const user4 = require("@src/assets/images/users/profile-4.png");
+const user5 = require("@src/assets/images/users/profile-5.png");
+const promise = require("@src/assets/images/users/promise.png");
 
 // Restaurants
 const restaurant1 = require("@src/assets/images/resturants/restaurant-1.png");
@@ -29,6 +34,7 @@ const restaurant3 = require("@src/assets/images/resturants/restaurant-3.png");
 const restaurant4 = require("@src/assets/images/resturants/restaurant-4.png");
 const restaurant5 = require("@src/assets/images/resturants/restaurant-5.png");
 const restaurant6 = require("@src/assets/images/resturants/restaurant-6.png");
+const restaurantMenu = require("@src/assets/images/resturants/restaurant-menu.png");
 
 // Payments
 const payoneer = require("@src/assets/images/payment/payoneer.png");
@@ -48,6 +54,10 @@ const illustrationLight2 = require("@src/assets/images/illustrations/illustratio
 const food1 = require("@src/assets/images/foods/food-1.png");
 const food2 = require("@src/assets/images/foods/food-2.png");
 const food3 = require("@src/assets/images/foods/food-3.png");
+const food4 = require("@src/assets/images/foods/food-4.png");
+const food5 = require("@src/assets/images/foods/food-5.png");
+const menu1 = require("@src/assets/images/foods/menu-1.png");
+const menu2 = require("@src/assets/images/foods/menu-2.png");
 
 // Banner
 const banner1 = require("@src/assets/images/banners/banner-1.png");
@@ -70,12 +80,16 @@ export default {
   xButton,
   photo,
   pinLogo,
+  voucher,
 
   user1,
   user2,
   user3,
   user4,
+  user5,
+  promise,
 
+  restaurantMenu,
   restaurant1,
   restaurant2,
   restaurant3,
@@ -98,6 +112,10 @@ export default {
   food1,
   food2,
   food3,
+  food4,
+  food5,
+  menu1,
+  menu2,
 
   banner1,
   banner2,

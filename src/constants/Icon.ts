@@ -9,6 +9,7 @@ const message = require("@src/assets/icons/message.png");
 const notificationIcon = require("@src/assets/icons/notification-icon.png");
 const show = require("@src/assets/icons/show.png");
 const star = require("@src/assets/icons/star.png");
+const star1 = require("@src/assets/icons/star-1.png");
 const volumeOff = require("@src/assets/icons/volume-off.png");
 const check = require("@src/assets/icons/check-list-icon.png");
 const back = require("@src/assets/icons/back.png");
@@ -21,6 +22,11 @@ const volumeUp = require("@src/assets/icons/volume-up.png");
 const trash = require("@src/assets/icons/trash.png");
 const plus = require("@src/assets/icons/plus.png");
 const minus = require("@src/assets/icons/minus.png");
+const mapPin = require("@src/assets/icons/map-pin.png");
+const mapPinThin = require("@src/assets/icons/map-pin-thin.png");
+const heart = require("@src/assets/icons/heart.png");
+const edit = require("@src/assets/icons/edit.png");
+const shoppingBag = require("@src/assets/icons/shopping-bag.png");
 
 export default {
   chat,
@@ -34,6 +40,7 @@ export default {
   notificationIcon,
   show,
   star,
+  star1,
   volumeOff,
   check,
   back,
@@ -46,4 +53,9 @@ export default {
   trash,
   plus,
   minus,
+  mapPin,
+  mapPinThin,
+  heart,
+  edit,
+  shoppingBag,
 };

@@ -1,16 +1,13 @@
-import { useState } from "react";
-import { Image, SafeAreaView, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
+import { Image, SafeAreaView, StyleSheet } from "react-native";
 import { View } from "@components/Themed";
 import { IconButton } from "@components/Button";
 import { AppStackScreenProps } from "@src/types";
 import { Sizes } from "@constants/Theme";
-import { paymentMethods } from "@mocks/orders";
 import FigText from "@components/StyledText";
 import Styles from "@constants/Styles";
 import Images from "@constants/Images";
 import Colors from "@constants/Colors";
 import useColorScheme from "@hooks/useColorScheme";
-import Icon from "@constants/Icon";
 import Link from "@components/Link";
 
 export default function EditLocation({ navigation }: AppStackScreenProps<"EditLocation">) {

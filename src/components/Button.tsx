@@ -17,7 +17,7 @@ type ButtonProps = {
 
 type GradientButtonProps = ButtonProps;
 
-export function GradientButton({ text, onPress, containerStyle }: GradientButtonProps) {
+export function GradientButton({ text, onPress, containerStyle, textStyle }: GradientButtonProps) {
   return (
     <TouchableOpacity
       style={[styles.container, containerStyle]}
@@ -32,7 +32,7 @@ export function GradientButton({ text, onPress, containerStyle }: GradientButton
         start={{ x: 0.1, y: 0.2 }}
         style={{ width: "100%", height: "100%", alignItems: "center", justifyContent: "center" }}
       >
-        <FigText weight="medium" style={[styles.text, { color: "#fff" }]}>
+        <FigText weight="medium" style={[styles.text, { color: "#fff" }, textStyle]}>
           {text}
         </FigText>
       </LinearGradient>

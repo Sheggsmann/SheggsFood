@@ -68,7 +68,7 @@ export default function OrderItem({ data, onIncrement, onDecrement, onDelete }: 
     };
   });
 
-  const ref = useRef<Swipeable>();
+  const ref = useRef<Swipeable | null>(null);
 
   return (
     <View style={{ paddingRight: Sizes.large }}>

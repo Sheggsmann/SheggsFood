@@ -151,3 +151,11 @@ export type IPaymentMethod = {
   provider: IPaymentProviders;
   cardNumber: number;
 };
+
+export type IUserProfile = {
+  name: string;
+  email: string;
+  profilePicture: any;
+  vouchersCount: number;
+  favorites: IFood[];
+};

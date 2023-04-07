@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Image, TouchableOpacity } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -12,11 +13,13 @@ import Icon from "@constants/Icon";
 import FigText from "@components/StyledText";
 import Device from "@constants/Device";
 import Styles from "@constants/Styles";
+import Profile from "@screens/app/profile/Profile";
 
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
+  const [profileScreen, setProfileScreen] = useState(false);
 
   const insets = useSafeAreaInsets();
 
@@ -60,7 +63,7 @@ export default function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Profile"
-        component={Home}
+        component={Profile}
         options={() => ({
           tabBarIcon: ({ focused, color }) => (
             <TabBarIcon name="profile" color={color} focused={focused} />

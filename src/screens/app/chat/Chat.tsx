@@ -18,10 +18,6 @@ export default function Chat({ navigation }: RootTabScreenProps<"Chat">) {
     <SafeAreaView style={Styles.mode(colorScheme).screen}>
       <Image source={Images.pattern1} style={Styles.g.imageBg2} />
 
-      <View style={[Styles.g.padding, Styles.g.header]}>
-        <IconButton icon="back" onPress={() => navigation.goBack()} />
-      </View>
-
       <ScrollView style={[Styles.g.screenPadding]}>
         <FigText style={{ fontSize: Sizes.bigFont, marginBottom: Sizes.medium }}>Chat</FigText>
 

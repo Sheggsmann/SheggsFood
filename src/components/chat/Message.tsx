@@ -1,11 +1,11 @@
-import { StyleSheet, Image } from "react-native";
+import { memo } from "react";
+import { StyleSheet, Image, ViewStyle } from "react-native";
 import { View } from "@components/Themed";
 import { IMessage } from "@src/types";
 import { Sizes } from "@constants/Theme";
 import { LinearGradient } from "expo-linear-gradient";
 import FigText from "@components/StyledText";
 import Colors from "@constants/Colors";
-import { ViewStyle } from "react-native";
 
 type MessageProps = {
   message: IMessage;
@@ -13,7 +13,7 @@ type MessageProps = {
   containerStyle?: ViewStyle;
 };
 
-export default function Message({ message, isCurrentUser }: MessageProps) {
+export default memo(function Message({ message, isCurrentUser }: MessageProps) {
   return isCurrentUser ? (
     <View transparent style={styles.container}>
       <LinearGradient
@@ -48,7 +48,7 @@ export default function Message({ message, isCurrentUser }: MessageProps) {
       </View>
     </View>
   );
-}
+});
 
 const styles = StyleSheet.create({
   container: {
