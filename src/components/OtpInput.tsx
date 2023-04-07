@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { StyleSheet, Keyboard, TextInput as DefaultTextInput } from "react-native";
 import { View } from "./Themed";
 import { Sizes } from "@constants/Theme";
@@ -22,6 +22,14 @@ export default function OtpInput({ onChange }: OtpInputProps) {
     useRef<InputRef>(null),
     useRef<InputRef>(null),
   ];
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      refs[0]?.current?.focus();
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   const keyPressed = (index: number, text: string) => {
     if (text) {

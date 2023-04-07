@@ -24,7 +24,8 @@ export default function PaymentMethod({ navigation }: AuthStackScreenProps<"Paym
             navigation.goBack();
           }}
         />
-        <View style={styles.form}>
+
+        <View transparent style={styles.form}>
           {/* Header Text */}
           <FigText weight="medium" style={Styles.g.authHeaderTitle}>
             Payment Method
@@ -71,7 +72,6 @@ export default function PaymentMethod({ navigation }: AuthStackScreenProps<"Paym
 const styles = StyleSheet.create({
   form: {
     flex: 1,
-    ...Styles.g.transparent,
   },
   button: {
     alignSelf: "center",

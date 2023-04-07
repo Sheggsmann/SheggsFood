@@ -11,9 +11,13 @@ import useColorScheme from "@hooks/useColorScheme";
 
 type PriceInfoprops = {
   onButtonPress?: () => void;
+  buttonText?: string;
 };
 
-export default function PriceInfo({ onButtonPress }: PriceInfoprops) {
+export default function PriceInfo({
+  onButtonPress,
+  buttonText = "Place My Order",
+}: PriceInfoprops) {
   const colorScheme = useColorScheme();
 
   const gradientColors =
@@ -55,7 +59,7 @@ export default function PriceInfo({ onButtonPress }: PriceInfoprops) {
         </View>
 
         <Button
-          text="Place My Order"
+          text={buttonText}
           containerStyle={{ backgroundColor: "#fff", width: "100%" }}
           textStyle={{ color: Colors.primary }}
           onPress={() => {

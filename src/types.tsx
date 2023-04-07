@@ -143,3 +143,11 @@ export type IOrder = {
   restaurant: IRestaurant;
   quantity: number;
 };
+
+type IPaymentProviders = "paypal" | "payoneer" | "visa";
+
+export type IPaymentMethod = {
+  id: number;
+  provider: IPaymentProviders;
+  cardNumber: number;
+};

@@ -15,16 +15,7 @@ import PriceInfo from "@components/orders/PriceInfo";
 export default function OrderDetails({ navigation }: AppStackScreenProps<"OrderDetails">) {
   const colorScheme = useColorScheme();
 
-  const [refreshing, setRefreshing] = useState(false);
   const [orderItems, setOrderItems] = useState(orders);
-
-  const onRefresh = (): void => {
-    setRefreshing(true);
-
-    setTimeout(() => {
-      setRefreshing(false);
-    }, 1500);
-  };
 
   const increment = (id: number) => {};
   const decrement = (id: number) => {};
@@ -41,8 +32,6 @@ export default function OrderDetails({ navigation }: AppStackScreenProps<"OrderD
       </View>
 
       <FlatList
-        refreshing={refreshing}
-        onRefresh={onRefresh}
         // contentContainerStyle={{ backgroundColor: "transparent" }}
         showsVerticalScrollIndicator={false}
         ListHeaderComponent={() => (
@@ -63,7 +52,7 @@ export default function OrderDetails({ navigation }: AppStackScreenProps<"OrderD
           />
         )}
         ListFooterComponent={
-          <PriceInfo onButtonPress={() => navigation.navigate("ConfirmOrder")} />
+          <PriceInfo buttonText="Next" onButtonPress={() => navigation.navigate("EditPayment")} />
         }
         ListFooterComponentStyle={{ paddingHorizontal: Sizes.large }}
       />
