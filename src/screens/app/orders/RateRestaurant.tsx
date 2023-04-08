@@ -69,7 +69,9 @@ export default function RateRestaurant({ navigation }: AppStackScreenProps<"Rate
             onSubmit={() => {
               navigation.goBack();
             }}
-            onSkip={() => {}}
+            onSkip={() => {
+              navigation.navigate("HomeNavigator");
+            }}
           />
         </View>
       </ImageBackground>

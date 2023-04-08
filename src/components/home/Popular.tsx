@@ -2,7 +2,6 @@ import { View } from "@components/Themed";
 import Food from "@components/resturants/Food";
 import { Sizes } from "@constants/Theme";
 import { IFood } from "@src/types";
-import { FlatList } from "react-native";
 import Styles from "@constants/Styles";
 
 type PopularProp = {

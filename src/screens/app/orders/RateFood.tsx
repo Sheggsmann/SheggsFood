@@ -67,7 +67,7 @@ export default function RateFood({ navigation }: AppStackScreenProps<"RateFood">
           {/* Feedback Component */}
           <Feedback
             onSubmit={() => {
-              navigation.goBack();
+              navigation.navigate("RateRestaurant");
             }}
             onSkip={() => {
               navigation.navigate("RateRestaurant");

@@ -88,7 +88,7 @@ export default function ConfirmOrder({ navigation }: AppStackScreenProps<"Confir
           </View>
         </View>
 
-        <PriceInfo onButtonPress={() => navigation.navigate("EditPayment")} />
+        <PriceInfo onButtonPress={() => navigation.navigate("FinishOrder")} />
       </View>
     </SafeAreaView>
   );

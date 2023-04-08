@@ -68,7 +68,7 @@ export default function FinishOrder({ navigation, route }: AppStackScreenProps<"
           {/* Feedback Component */}
           <Feedback
             onSubmit={() => {
-              navigation.goBack();
+              navigation.navigate("RateFood");
             }}
             onSkip={() => {
               navigation.navigate("RateFood");

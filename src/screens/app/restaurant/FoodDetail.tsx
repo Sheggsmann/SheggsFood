@@ -67,7 +67,9 @@ export default function FoodDetail({ navigation }: AppStackScreenProps<"FoodDeta
       >
         <GradientButton
           text="Add To Cart"
-          onPress={() => {}}
+          onPress={() => {
+            navigation.navigate("OrderDetails");
+          }}
           containerStyle={{
             width: "100%",
           }}
