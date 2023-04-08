@@ -38,11 +38,11 @@ export default {
     lightShadow: {
       shadowColor: "#000",
       shadowOffset: {
-        height: 6,
-        width: 6,
+        height: 4,
+        width: 4,
       },
-      shadowOpacity: 0.1,
-      shadowRadius: 12,
+      shadowOpacity: 0.2,
+      shadowRadius: 20,
     },
   }),
 

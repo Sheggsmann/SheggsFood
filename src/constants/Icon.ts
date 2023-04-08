@@ -16,6 +16,7 @@ const check = require("@src/assets/icons/check-list-icon.png");
 const back = require("@src/assets/icons/back.png");
 const closeIcon = require("@src/assets/icons/close-icon.png");
 const home = require("@src/assets/icons/home.png");
+const home1 = require("@src/assets/icons/home-1.png");
 const buy = require("@src/assets/icons/buy.png");
 const call = require("@src/assets/icons/call.png");
 const send = require("@src/assets/icons/send.png");
@@ -28,12 +29,15 @@ const mapPinThin = require("@src/assets/icons/map-pin-thin.png");
 const heart = require("@src/assets/icons/heart.png");
 const edit = require("@src/assets/icons/edit.png");
 const shoppingBag = require("@src/assets/icons/shopping-bag.png");
+const profile1 = require("@src/assets/icons/profile-1.png");
+
 
 export default {
   chat,
   editIcon,
   email,
   profile,
+  profile1,
   filter,
   iconSearch,
   lock,
@@ -48,6 +52,7 @@ export default {
   back,
   closeIcon,
   home,
+  home1,
   buy,
   call,
   send,

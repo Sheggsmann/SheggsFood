@@ -113,7 +113,7 @@ export default function Home({ navigation }: RootTabScreenProps<"Home">) {
           </View>
 
           <Popular
-            data={foods}
+            data={foods.slice(0, 4)}
             onPress={() => navigation.navigate("AppNavigation", { screen: "FoodDetail" })}
           />
         </View>
