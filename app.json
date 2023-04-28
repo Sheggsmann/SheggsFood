@@ -8,21 +8,30 @@
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./src/assets/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "config": {}
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "config": {
+        "googleMaps": {}
       }
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5d1ff37b-bf04-49db-b157-22af31278b2b"
+      }
     }
   }
 }

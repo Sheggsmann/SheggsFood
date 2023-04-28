@@ -79,6 +79,7 @@ export type AppStackParamList = {
   YourOrders: undefined;
   OrderDetails: undefined;
   SetLocation: undefined;
+  SetOrderLocation: undefined;
   TrackOrder: undefined;
   ProductDetail: undefined;
   DetailMenu: undefined;

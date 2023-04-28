@@ -30,7 +30,9 @@ const heart = require("@src/assets/icons/heart.png");
 const edit = require("@src/assets/icons/edit.png");
 const shoppingBag = require("@src/assets/icons/shopping-bag.png");
 const profile1 = require("@src/assets/icons/profile-1.png");
-
+const compass = require("@src/assets/icons/compass.png");
+const car = require("@src/assets/icons/car.png");
+const clock = require("@src/assets/icons/clock.png");
 
 export default {
   chat,
@@ -65,4 +67,7 @@ export default {
   heart,
   edit,
   shoppingBag,
+  compass,
+  car,
+  clock,
 };

@@ -62,7 +62,9 @@ export default function Home({ navigation }: RootTabScreenProps<"Home">) {
           <SearchBar placeholder="What do you want to order?" />
           <IconButton
             icon="filter"
-            onPress={() => {}}
+            onPress={() => {
+              navigation.navigate("AppNavigation", { screen: "SetOrderLocation" });
+            }}
             tintColor={darkMode ? "#fff" : Colors.secondary}
             containerStyle={{
               backgroundColor: darkMode ? Colors.darkTint : Colors.lightSecondary,

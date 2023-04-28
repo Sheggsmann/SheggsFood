@@ -63,7 +63,7 @@ export default function EditLocation({ navigation }: AppStackScreenProps<"EditLo
             <Link
               text="Set Location"
               style={{ color: Colors.primary }}
-              onPress={() => navigation.navigate("ConfirmOrder")}
+              onPress={() => navigation.navigate("SetOrderLocation")}
             />
           </View>
         </View>
