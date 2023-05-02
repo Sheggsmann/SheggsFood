@@ -15,6 +15,7 @@ module.exports = function (api) {
             "@screens": "./src/screens",
             "@hooks": "./src/hooks",
             "@mocks": "./src/mocks",
+            "@redux": "./src/redux",
             "@src": "./src",
           },
         },

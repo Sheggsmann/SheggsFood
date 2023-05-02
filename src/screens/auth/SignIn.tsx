@@ -1,7 +1,9 @@
 import { StyleSheet, ImageBackground, Image, KeyboardAvoidingView, ScrollView } from "react-native";
 import { View } from "@components/Themed";
-import { AuthStackScreenProps, RootStackScreenprops } from "@src/types";
+import { RootStackScreenprops } from "@src/types";
 import { GradientButton, IconTextButton } from "@components/Button";
+import { useAppDispatch, useAppSelector } from "@redux/hooks";
+import { login } from "@redux/userSlice";
 import { Input } from "@components/Input";
 import { Sizes } from "@constants/Theme";
 import Device from "@constants/Device";
@@ -14,6 +16,12 @@ import FigText from "@components/StyledText";
 
 export default function SignIn({ navigation }: RootStackScreenprops<"AuthNavigation">) {
   const colorScheme = useColorScheme();
+  const dispatch = useAppDispatch();
+  const user = useAppSelector((state) => state.user);
+
+  const handleSignin = () => {
+    dispatch(login());
+  };
 
   return (
     <View style={[Styles.mode(colorScheme).container]}>
@@ -94,8 +102,10 @@ export default function SignIn({ navigation }: RootStackScreenprops<"AuthNavigat
               {/* Button */}
               <GradientButton
                 text="Login"
-                onPress={() => navigation.replace("AppNavigation", { screen: "HomeNavigator" })}
+                onPress={handleSignin}
                 containerStyle={styles.button}
+                loading={user.loading}
+                disabled={user.loading}
               />
             </View>
           </KeyboardAvoidingView>

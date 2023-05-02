@@ -1,4 +1,11 @@
-import { Image, StyleSheet, TouchableOpacity, ViewStyle, TextStyle } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  ViewStyle,
+  TextStyle,
+  ActivityIndicator,
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Sizes } from "@constants/Theme";
 import Icon from "@constants/Icon";
@@ -13,11 +20,20 @@ type ButtonProps = {
   onPress: () => void;
   containerStyle?: ViewStyle;
   textStyle?: TextStyle;
+  loading?: boolean;
+  disabled?: boolean;
 };
 
 type GradientButtonProps = ButtonProps;
 
-export function GradientButton({ text, onPress, containerStyle, textStyle }: GradientButtonProps) {
+export function GradientButton({
+  text,
+  onPress,
+  containerStyle,
+  textStyle,
+  loading,
+  disabled,
+}: GradientButtonProps) {
   return (
     <TouchableOpacity
       style={[styles.container, containerStyle]}
@@ -26,15 +42,20 @@ export function GradientButton({ text, onPress, containerStyle, textStyle }: Gra
         Haptics.medium();
         onPress();
       }}
+      disabled={disabled}
     >
       <LinearGradient
         colors={[Colors.lightPrimary, Colors.primary]}
         start={{ x: 0.1, y: 0.2 }}
         style={{ width: "100%", height: "100%", alignItems: "center", justifyContent: "center" }}
       >
-        <FigText weight="medium" style={[styles.text, { color: "#fff" }, textStyle]}>
-          {text}
-        </FigText>
+        {loading ? (
+          <ActivityIndicator size={30} color={"#fff"} />
+        ) : (
+          <FigText weight="medium" style={[styles.text, { color: "#fff" }, textStyle]}>
+            {text}
+          </FigText>
+        )}
       </LinearGradient>
     </TouchableOpacity>
   );

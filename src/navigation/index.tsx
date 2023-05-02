@@ -1,13 +1,16 @@
+import { useEffect, useState } from "react";
+import { ColorSchemeName } from "react-native";
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { ColorSchemeName } from "react-native";
 import { AppStackParamList, AuthStackParamList, RootStackParamList } from "@src/types";
 
 import Colors from "@constants/Colors";
 import useColorScheme from "@hooks/useColorScheme";
 import AuthNavigator from "./authNavigator";
-import BottomTabNavigator from "./tabNavigator";
 import AppNavigator from "./appNavigator";
+import { secureStorage } from "@src/utils/storage";
+import { useAppDispatch, useAppSelector } from "@redux/hooks";
+import { userActions } from "@redux/userSlice";
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   // Add Linking Configuration
@@ -28,18 +31,37 @@ type StackParamList = RootStackParamList & AuthStackParamList;
 const Stack = createNativeStackNavigator<StackParamList>();
 
 function RootNavigator() {
+  const isLoggedIn = useAppSelector((state) => state.user.loggedIn);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    const restoreUser = async () => {
+      const currentUser = await secureStorage.getItem("currentUser");
+      if (currentUser) {
+        dispatch(userActions.loggedIn({ user: currentUser, token: "1234" }));
+      } else {
+        dispatch(userActions.loggedOut());
+      }
+    };
+
+    restoreUser();
+  }, []);
+
   return (
     <Stack.Navigator initialRouteName="AuthNavigation">
-      {/* <Stack.Screen
-        name="AuthNavigation"
-        component={AuthNavigator}
-        options={{ headerShown: false }}
-      /> */}
-      <Stack.Screen
-        name="AppNavigation"
-        component={AppNavigator}
-        options={{ headerShown: false }}
-      />
+      {!isLoggedIn ? (
+        <Stack.Screen
+          name="AuthNavigation"
+          component={AuthNavigator}
+          options={{ headerShown: false, animationTypeForReplace: "push" }}
+        />
+      ) : (
+        <Stack.Screen
+          name="AppNavigation"
+          component={AppNavigator}
+          options={{ headerShown: false, animationTypeForReplace: "pop" }}
+        />
+      )}
     </Stack.Navigator>
   );
 }

@@ -11,6 +11,7 @@
       "@screens/*": ["src/screens/*"],
       "@mocks/*": ["src/mocks/*"],
       "@hooks/*": ["src/hooks/*"],
+      "@redux/*": ["src/redux/*"],
       "@src/*": ["src/*"]
     }
   }
