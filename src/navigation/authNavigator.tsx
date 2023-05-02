@@ -20,32 +20,20 @@ const Stack = createNativeStackNavigator<StackParamList>();
 
 export default function AuthNavigator() {
   return (
-    <Stack.Navigator initialRouteName="OnBoard1">
-      <Stack.Screen name="OnBoard1" component={OnBoard1} options={{ headerShown: false }} />
-      <Stack.Screen name="OnBoard2" component={OnBoard2} options={{ headerShown: false }} />
-      <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} />
-      <Stack.Screen name="UserProfile" component={UserProfile} options={{ headerShown: false }} />
-      <Stack.Screen
-        name="PaymentMethod"
-        component={PaymentMethod}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen name="UploadPhoto" component={UploadPhoto} options={{ headerShown: false }} />
-      <Stack.Screen name="SetLocation" component={SetLocation} options={{ headerShown: false }} />
-      <Stack.Screen name="Success" component={Success} options={{ headerShown: false }} />
-      <Stack.Screen name="Verification" component={Verification} options={{ headerShown: false }} />
-      <Stack.Screen name="Via" component={Via} options={{ headerShown: false }} />
-      <Stack.Screen
-        name="ResetPassword"
-        component={ResetPassword}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="UploadPreview"
-        component={UploadPreview}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false }} />
+    <Stack.Navigator initialRouteName="OnBoard1" screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="OnBoard1" component={OnBoard1} />
+      <Stack.Screen name="OnBoard2" component={OnBoard2} />
+      <Stack.Screen name="SignUp" component={SignUp} />
+      <Stack.Screen name="UserProfile" component={UserProfile} />
+      <Stack.Screen name="PaymentMethod" component={PaymentMethod} />
+      <Stack.Screen name="UploadPhoto" component={UploadPhoto} />
+      <Stack.Screen name="SetLocation" component={SetLocation} />
+      <Stack.Screen name="Success" component={Success} />
+      <Stack.Screen name="Verification" component={Verification} />
+      <Stack.Screen name="Via" component={Via} />
+      <Stack.Screen name="ResetPassword" component={ResetPassword} />
+      <Stack.Screen name="UploadPreview" component={UploadPreview} />
+      <Stack.Screen name="SignIn" component={SignIn} />
     </Stack.Navigator>
   );
 }

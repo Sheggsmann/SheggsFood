@@ -1,6 +1,6 @@
 import { StyleSheet, ImageBackground, Image, KeyboardAvoidingView, ScrollView } from "react-native";
 import { View } from "@components/Themed";
-import { RootStackScreenprops } from "@src/types";
+import { AuthStackScreenProps } from "@src/types";
 import { GradientButton, IconTextButton } from "@components/Button";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import { login } from "@redux/userSlice";
@@ -14,7 +14,7 @@ import Images from "@constants/Images";
 import Link from "@components/Link";
 import FigText from "@components/StyledText";
 
-export default function SignIn({ navigation }: RootStackScreenprops<"AuthNavigation">) {
+export default function SignIn({ navigation }: AuthStackScreenProps<"SignIn">) {
   const colorScheme = useColorScheme();
   const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.user);
@@ -95,7 +95,7 @@ export default function SignIn({ navigation }: RootStackScreenprops<"AuthNavigat
                     textDecorationLine: "underline",
                     marginTop: Sizes.xLarge,
                   }}
-                  onPress={() => navigation.navigate("AuthNavigation", { screen: "Via" })}
+                  onPress={() => navigation.navigate("Via")}
                 />
               </View>
 
